@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced AI-powered speaking chatbot with voice recognition and modern UI">
+    <meta name="theme-color" content="#667eea">
+
+    <title>Advanced AI Chatbot - Voice Enabled</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Material Design Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/6.5.95/css/materialdesignicons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Main Chat Card -->
+    <div class="card">
+        <!-- Header -->
+        <div id="header">
+            <div class="header-content">
+                <div class="bot-avatar">🤖</div>
+                <div class="header-title">
+                    <h1>AI Assistant</h1>
+                    <div class="bot-status">
+                        <span class="status-indicator"></span>
+                        <span>Online & Ready</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="icon-button" id="theme-toggle" title="Toggle Dark Mode">
+                    <i class="mdi mdi-theme-light-dark"></i>
+                </button>
+                <button class="icon-button" id="settings-button" title="Settings">
+                    <i class="mdi mdi-cog"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Message Section -->
+        <div id="message-section">
+            <div class="message" id="bot">
+                <span id="bot-response">👋 Hello! I'm your AI assistant. I can speak and listen! Try typing or click the
+                    microphone to talk to me.</span>
+            </div>
+
+            <!-- Typing Indicator (hidden by default) -->
+            <div class="typing-indicator" id="typing-indicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+
+        <!-- Input Section -->
+        <div id="input-section">
+            <button class="voice-button" id="voice-button" title="Click to speak">
+                <i class="mdi mdi-microphone"></i>
+            </button>
+
+            <div class="input-wrapper">
+                <input id="input" type="text" placeholder="Type your message or use voice..." autocomplete="off"
+                    autofocus>
+            </div>
+
+            <button class="send" id="send-button" onclick="sendMessage()" title="Send message">
+                <i class="mdi mdi-send"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settings-panel">
+        <div class="settings-header">
+            <h2>Settings</h2>
+            <button class="icon-button" id="close-settings">
+                <i class="mdi mdi-close"></i>
+            </button>
+        </div>
+
+        <div class="setting-group">
+            <label for="voice-select">Voice</label>
+            <select id="voice-select">
+                <option value="">Default Voice</option>
+            </select>
+        </div>
+
+        <div class="setting-group">
+            <label for="speech-rate">Speech Rate</label>
+            <input type="range" id="speech-rate" min="0.5" max="2" step="0.1" value="1">
+            <span id="rate-value">1.0x</span>
+        </div>
+
+        <div class="setting-group">
+            <label>Sound Effects</label>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span>Enable sound effects</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="sound-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="setting-group">
+            <label>Auto-Speak Responses</label>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span>Automatically speak bot replies</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="auto-speak-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="index.js"></script>
+</body>
+
+</html>
